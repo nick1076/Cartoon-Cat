@@ -115,6 +115,7 @@ public class TaskManager : MonoBehaviour
         AddTask("photos3&Take photos of the drawings&0&3");
         yield return new WaitForSeconds(3.0f);
         cartoonCat.SetActive(true);
+        GameObject.Find("Cartoon Cat").GetComponent<CartoonCat>().SetCatPositionToFurthest(GameObject.FindWithTag("Player").transform);
     }
 
     public void ResetTask(string id)

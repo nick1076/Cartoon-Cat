@@ -1,24 +1,4 @@
 
 Bugs:
 
-- Camera task completed after only taking first photo (X)
-- Cat head always looking even when player cant be seen (X)
-- Vent sound sucks (VOID)
-- You can uncrouch when you shouldn't be able to (X)
-- Player can move during cutscene (X)
-- Car slow doesn't sound good (not faded) (X)
-- Ambience not playing at all (X)
-
-- Body bags have collision and block player (X)
-- Add custom footstep sounds per material (Rip Proelium code also) (X)
-- Fix Paper & Item collisions and use (X)
-- Check render resolution (X)
-- Make table & vent lights flicker (X)
-- Show and fade control list on screen when the game starts (X)
-- Remove the "Get the hell out" task when player drops into tunnel (X)
-- Make ambiences fade depending on their target volume (like 1/100 of the target volume for decrease/increase) (X)
-- Add NoClip for debugging (X)
-- Add view bobbing (X)
-- Gather footstep sounds (X)
-- Fix main menu load on build (Start at black and once loaded play sound and fade in) (X)
-- Try and change unity splash to black (X)
+- NONE CONGRATS!

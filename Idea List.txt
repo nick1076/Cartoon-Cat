@@ -1,0 +1,5 @@
+
+Ideas: (For the final version)
+
+- Upon taking a picture of the cat at the end, all the cartoon textures, ink, bodies, blood and everything else goes away. Even the drop into the lower coridor turns into a normal staircase.
+- Add hover text (Can hover over objects and a small tooltip will appear, rip from backrooms code or custom code), also when left clicking (or some key input) itll show a second line of dialog/tip

@@ -36,6 +36,8 @@ public class CartoonCat : MonoBehaviour
     private GameObject currentPoint;
     private GameObject movingToPoint;
 
+    public List<Transform> SpawnPoints = new List<Transform>();
+
     public enum AItypeData
     {
         Patrol,
@@ -240,11 +242,11 @@ public class CartoonCat : MonoBehaviour
                 }
                 //Kill the player
                 Player.GetComponent<Effects>().Scare(2);
-                entireCat.transform.position = originLocat.transform.position;
-                entireCat.transform.rotation = originLocat.transform.rotation;
 
                 Player.transform.position = playerRespawnLocat.transform.position;
                 Player.transform.rotation = playerRespawnLocat.transform.rotation;
+
+                SetCatPositionToFurthest(Player.transform);
 
                 Player.GetComponent<PlayerInventory>().flashlightObj.GetComponent<Flashlight>().light.GetComponent<FlickeringLight>().enabled = false;
 
@@ -258,5 +260,28 @@ public class CartoonCat : MonoBehaviour
 
             audioDist.distortionLevel = distortion;
         }
+    }
+
+    public void SetCatPositionToFurthest(Transform playerLocat)
+    {
+        float currentFurthest = 0;
+        Transform currentSpawn = null;
+
+        foreach (Transform pos in SpawnPoints)
+        {
+            if (currentSpawn == null)
+            {
+                currentSpawn = pos;
+            }
+
+            if (Vector3.Distance(pos.position, playerLocat.position) > currentFurthest)
+            {
+                currentFurthest = Vector3.Distance(pos.position, playerLocat.position);
+                currentSpawn = pos;
+            }
+        }
+
+        entireCat.transform.position = currentSpawn.transform.position;
+        entireCat.transform.rotation = currentSpawn.transform.rotation;
     }
 }
