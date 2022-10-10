@@ -27156,7 +27156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575331383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2372055, y: -14.939999, z: 79.31152}
+  m_LocalPosition: {x: 0.2372055, y: -14.939999, z: 81.562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 35886893}
@@ -115983,7 +115983,7 @@ MonoBehaviour:
   fadeinUI: {fileID: 1276997284}
   dateText: {fileID: 1090464079}
   controlList: {fileID: 905892481}
-  cutsceneEnabled: 1
+  cutsceneEnabled: 0
   player: {fileID: 114605907906311965}
   inState: 0
 --- !u!114 &2139657375

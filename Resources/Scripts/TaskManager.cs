@@ -104,8 +104,8 @@ public class TaskManager : MonoBehaviour
         GameObject.Find("Player").GetComponent<FPSControllerLPFP.FpsControllerLPFP>().SetAmbience(5) ;
         GameObject.Find("Maze Pre").SetActive(false);
         mazePost.SetActive(true);
-        playerRespawn.transform.position = GameObject.FindWithTag("Player").transform.position;
-        playerRespawn.transform.rotation = GameObject.FindWithTag("Player").transform.rotation;
+        //playerRespawn.transform.position = GameObject.FindWithTag("Player").transform.position;
+        //playerRespawn.transform.rotation = GameObject.FindWithTag("Player").transform.rotation;
         yield return new WaitForSeconds(1.0f);
         AddTask("welcome&Welcome to my world&0&1");
         yield return new WaitForSeconds(8.0f);
