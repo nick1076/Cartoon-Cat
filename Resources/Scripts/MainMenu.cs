@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
     public GameObject fadeIn;
     public GameObject fadeOut;
 
+    public GameObject aboutMenu;
+
+    public List<GameObject> toggleOffForAbout = new List<GameObject>();
+
     public GameObject completionMedal;
 
     public Transform canvas;
@@ -52,6 +56,26 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(fadeInAudio());
         madeFade.SetActive(true);
         black.SetActive(false);
+    }
+
+    public void About(bool on)
+    {
+        if (on)
+        {
+            aboutMenu.SetActive(true);
+            foreach (GameObject obj in toggleOffForAbout)
+            {
+                obj.SetActive(false);
+            }
+        }
+        else
+        {
+            aboutMenu.SetActive(false);
+            foreach (GameObject obj in toggleOffForAbout)
+            {
+                obj.SetActive(true);
+            }
+        }
     }
 
     public void Quit()

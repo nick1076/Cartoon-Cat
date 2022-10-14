@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class Vent : MonoBehaviour
 {
+    //Hidden Code Variables
+    bool open;
+    bool moving;
+    bool canBeOpened;
 
-    public bool open;
+    //Locations
     public Transform openPosition;
-    public bool hovered;
-    public bool moving;
+    public Transform defaultPosition;
 
-    public GameObject openSound;
-    public GameObject closeSound;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        hovered = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        hovered = false;
-    }
+    //Effects
+    public GameObject openEffect;
+    public GameObject closeEffect;
 
     void Update()
     {
-        if (hovered && Input.GetKeyDown(KeyCode.E) && !moving)
+        if (GameObject.Find("Player") == null || defaultPosition == null)
+        {
+            return;
+        }
+
+        float dist = Vector3.Distance(GameObject.Find("Player").transform.position, defaultPosition.position);
+        if (dist < 1.5f && dist > 0.3f)
+        {
+            canBeOpened = true;
+        }
+        else
+        {
+            canBeOpened = false;
+        }
+
+        if (canBeOpened && Input.GetKeyDown(KeyCode.E) && !moving)
         {
             if (open)
             {
@@ -42,7 +51,7 @@ public class Vent : MonoBehaviour
     {
         moving = true;
 
-        Instantiate(openSound, this.transform.position, this.transform.rotation, this.transform);
+        Instantiate(openEffect, this.transform.position, this.transform.rotation, this.transform);
 
         for (int i = 0; i < 100; i++)
         {
@@ -58,7 +67,7 @@ public class Vent : MonoBehaviour
     {
         moving = true;
 
-        Instantiate(closeSound, this.transform.position, this.transform.rotation, this.transform);
+        Instantiate(closeEffect, this.transform.position, this.transform.rotation, this.transform);
 
         for (int i = 0; i < 100; i++)
         {

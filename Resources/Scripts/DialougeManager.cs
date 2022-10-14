@@ -18,11 +18,14 @@ public class DialougeManager : MonoBehaviour
         StartCoroutine(ProcessDialouges());
     }
 
-    public void QueDialouge(string info)
+    public void QueDialouge(string info, bool ignorePrev = false)
     {
-        if (previousMessage == info)
+        if (!ignorePrev)
         {
-            return;
+            if (previousMessage == info)
+            {
+                return;
+            }
         }
 
         dialougeQues.Add(info);
